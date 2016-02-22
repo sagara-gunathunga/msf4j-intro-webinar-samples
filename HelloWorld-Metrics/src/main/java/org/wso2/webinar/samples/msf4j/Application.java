@@ -16,18 +16,15 @@
 
 package org.wso2.webinar.samples.msf4j;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
+import org.wso2.msf4j.MicroservicesRunner;
+import org.wso2.msf4j.analytics.metrics.MetricReporter;
+import org.wso2.msf4j.analytics.metrics.MetricsInterceptor;
 
-
-@Path("/hello")
-public class HelloWorld {
-
-    @GET
-    @Path("/{user}")
-    public String hello(@PathParam("user") String user) {
-        return "Hello " + user;
+public class Application {
+    public static void main(String[] args) {
+        new MicroservicesRunner()
+                .deploy(new HelloWorld())
+                .addInterceptor(new MetricsInterceptor().init(MetricReporter.CONSOLE, MetricReporter.JMX))
+                .start();
     }
-
 }

@@ -26,7 +26,7 @@ public class HelloWorld {
 
     @GET
     @Path("/{user}")
-    public String get(@PathParam("user") String user) {
+    public String hello(@PathParam("user") String user) {
         return "Hello " + user;
     }
 

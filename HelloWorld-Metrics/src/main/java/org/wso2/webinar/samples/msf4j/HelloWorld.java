@@ -16,6 +16,9 @@
 
 package org.wso2.webinar.samples.msf4j;
 
+import org.wso2.carbon.metrics.annotation.Metered;
+import org.wso2.carbon.metrics.annotation.Timed;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -26,8 +29,15 @@ public class HelloWorld {
 
     @GET
     @Path("/{user}")
+    @Metered
     public String hello(@PathParam("user") String user) {
         return "Hello " + user;
+    }
+
+    @GET
+    @Timed
+    public String helloWorld() {
+        return "Hello World";
     }
 
 }
