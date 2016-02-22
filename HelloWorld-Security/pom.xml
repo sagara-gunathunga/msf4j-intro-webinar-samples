@@ -32,17 +32,6 @@
     <version>1.0.0-SNAPSHOT</version>
     <name>WSO2 MSF4J Microservice</name>
 
-
-    <dependencies>
-    <!-- Uncomment the following if you want to enable metrics & monitoring -->
-    <!--
-    <dependency>
-       <groupId>org.wso2.msf4j</groupId>
-       <artifactId>msf4j-analytics</artifactId>
-    </dependency>
-    -->
-    </dependencies>
-
     <properties>
         <microservice.mainClass>org.wso2.webinar.samples.msf4j.Application</microservice.mainClass>
     </properties>
