@@ -47,7 +47,7 @@ java -jar build/libs/HelloWorld-Metrics-all.jar
 # How to test this sample 
 Use following cURL command
 ```shell
-shell curl -v http://localhost:8080/hello/world 
+curl -v http://localhost:8080/hello/world 
 ```
 
 
