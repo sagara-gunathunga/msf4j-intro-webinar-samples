@@ -2,6 +2,7 @@
 
 This sample demonstrates how to use JPA API and Hibernate with WSO2 MSF4J framework. You can use in-memoery H2 database or MySQL database server with this sample. 
 
+![Image of Sample] (https://raw.githubusercontent.com/sagara-gunathunga/msf4j-intro-webinar-samples/master/etc/jpa.png)
 
 # How to build and run using Maven 
 
