@@ -34,10 +34,10 @@ java -jar build/libs/HelloWorld-Security-all.jar
 # How to test this sample 
 Following cURL command will return HTTP 401 status code 
 ```shell
-shell curl -v http://localhost:8080/hello/world 
+curl -v http://localhost:8080/hello/world 
 ```
 
 Following cURL command will return HTTP 200 status code with expected results 
 ```shell
-shell curl -u sagara:sagara -v http://localhost:8080/hello/world 
+curl -u sagara:sagara -v http://localhost:8080/hello/world 
 ```
