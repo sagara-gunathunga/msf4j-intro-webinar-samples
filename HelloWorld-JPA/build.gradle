@@ -1,0 +1,51 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:1.2.3'
+    }
+}
+
+apply plugin: 'maven'
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'com.github.johnrengelman.shadow'
+
+
+
+mainClassName = 'org.wso2.webinar.samples.msf4j.Application'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url "http://maven.wso2.org/nexus/content/repositories/releases" }
+}
+
+dependencies {
+       compile "org.wso2.msf4j:msf4j-service:1.0.0"
+       compile "org.hibernate:hibernate-core:5.0.1.Final"
+       compile "org.hibernate:hibernate-entitymanager:5.0.1.Final"
+       compile "org.slf4j:slf4j-api:1.7.5"
+       compile "org.slf4j:slf4j-log4j12:1.6.0"
+       compile "com.h2database:h2:1.2.145"
+    // compile "mysql:mysql-connector-java:5.1.36"
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.1'
+}
+
+defaultTasks 'shadowJar'
+
+// Configure the shadow jar task
+shadowJar {
+    mergeServiceFiles()
+    exclude 'META-INF/*.DSA'
+    exclude 'META-INF/*.RSA'
+}
+jar {
+    manifest {
+        attributes 'Main-Class': mainClassName
+    }
+}

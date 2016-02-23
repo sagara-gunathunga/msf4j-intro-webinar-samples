@@ -1,0 +1,46 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:1.2.3'
+    }
+}
+
+apply plugin: 'maven'
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'com.github.johnrengelman.shadow'
+
+
+
+mainClassName = 'org.wso2.webinar.samples.msf4j.Application'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url "http://maven.wso2.org/nexus/content/repositories/releases" }
+}
+
+dependencies {
+       compile "org.wso2.msf4j:msf4j-service:1.0.0"
+       compile "org.wso2.msf4j:msf4j-analytics:1.0.0"
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.1'
+}
+
+defaultTasks 'shadowJar'
+
+// Configure the shadow jar task
+shadowJar {
+    mergeServiceFiles()
+    exclude 'META-INF/*.DSA'
+    exclude 'META-INF/*.RSA'
+}
+jar {
+    manifest {
+        attributes 'Main-Class': mainClassName
+    }
+}
