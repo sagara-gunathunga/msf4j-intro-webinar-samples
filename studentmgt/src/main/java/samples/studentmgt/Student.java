@@ -14,19 +14,28 @@
  * limitations under the License.
  */
 
-package org.wso2.webinar.samples.msf4j;
+package samples.studentmgt;
 
-import org.wso2.msf4j.MicroservicesRunner;
+public class Student {
 
-/**
- * Application entry point.
- *
- * @since 1.0.0-SNAPSHOT
- */
-public class Application {
-    public static void main(String[] args) {
-        new MicroservicesRunner()
-                .deploy(new HelloWorld())
-                .start();
+    private String id;
+
+    private String name;
+
+    public String getId() {
+        return id;
     }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
 }

@@ -26,9 +26,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.wso2.webinar.samples.msf4j</groupId>
-    <artifactId>HelloWorld</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <groupId>samples.studentmgt</groupId>
+    <artifactId>studentmgt</artifactId>
+    <version>1.0.0</version>
     <name>WSO2 MSF4J Microservice</name>
 
 
@@ -43,7 +43,7 @@
     </dependencies>
 
     <properties>
-        <microservice.mainClass>org.wso2.webinar.samples.msf4j.Application</microservice.mainClass>
+        <microservice.mainClass>samples.studentmgt.Application</microservice.mainClass>
     </properties>
 
 </project>

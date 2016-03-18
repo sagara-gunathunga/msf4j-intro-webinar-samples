@@ -20,14 +20,21 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 
-
+/**
+ * This is the Microservice resource class.
+ * See <a href="https://github.com/wso2/msf4j#getting-started">https://github.com/wso2/msf4j#getting-started</a>
+ * for the usage of annotations.
+ *
+ * @since 1.0.0-SNAPSHOT
+ */
 @Path("/hello")
 public class HelloWorld {
 
     @GET
     @Path("/{user}")
-    public String hello(@PathParam("user") String user) {
+    public String get(@PathParam("user") String user) {
         return "Hello " + user;
     }
+
 
 }
