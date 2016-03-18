@@ -37,13 +37,13 @@ curl -i  http://localhost:8080/students/400
 
 3. get all students 
 ```shell
-curl -i -H "Accept: application/json" -H "Content-Type: application/json"  --data "{id='400', name='sam'}" -X PUT http://localhost:8080/students/400
+curl -i  http://localhost:8080/students
+
 ```
 
 3. Modify  students details  
 ```shell
-curl -i  http://localhost:8080/students
-
+curl -i -H "Accept: application/json" -H "Content-Type: application/json"  --data "{id='400', name='john'}" -X PUT http://localhost:8080/students/400
 ```
 
 5. Remove a students 
