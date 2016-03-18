@@ -22,13 +22,13 @@ java -jar target/studentmgt-1.0.0.jar
 # How to test this sample 
 Use following cURL commands
 
-1. Add student 
+1. Add a student 
 ```shell
 curl -i -H "Accept: application/json" -H "Content-Type: application/json"  --data "{id='400', name='sam'}" -X POST http://localhost:8080/students
 
 ```
 
-2. get specific student 
+2. get a specific student 
 ```shell
 curl -i  http://localhost:8080/students/400
 
@@ -41,7 +41,7 @@ curl -i  http://localhost:8080/students
 
 ```
 
-3. Modify  students details  
+3. Modify a student details  
 ```shell
 curl -i -H "Accept: application/json" -H "Content-Type: application/json"  --data "{id='400', name='john'}" -X PUT http://localhost:8080/students/400
 ```
